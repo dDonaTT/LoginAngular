@@ -1,0 +1,88 @@
+<div class="productform">
+  <h2>Product Form</h2>
+  <button class="add-button" (click)="addProduct()">+ Add</button>
+</div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="custom-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let product">{{ product.category }}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let product">{{ product.date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let product">
+        <button mat-icon-button color="primary" (click)="editProduct(product)">
+          <mat-icon style="transform: rotate(140deg)">&#9999;</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          class="delete-button"
+          color="warn"
+          (click)="deleteProduct(product)"
+        >
+          <mat-icon>x</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<ng-container *ngFor="let product of products">
+  <div class="dialog-overlay"></div>
+  <div class="dialog-container" [ngClass]="{'hide-form': !showAddForm}">
+    <div class="dialog-header">
+      <h3>Add Product Form</h3>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-form">
+        <input
+          type="text"
+          [(ngModel)]="product.name"
+          required
+          placeholder="Product name*"
+        />
+
+        <select [(ngModel)]="product.category" required>
+          <option value="" disabled selected>Product category*</option>
+          <option value="food">Food</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing</option>
+        </select>
+        <input
+          type="price"
+          [(ngModel)]="product.price"
+          required
+          placeholder="Price*"
+        />
+
+        <input id="dateInput" type="date" [(ngModel)]="product.date" required />
+      </div>
+    </div>
+    <div class="dialog-footer">
+      <button class="dialog-button" (click)="cancelForm()">Cancel</button>
+      <button class="dialog-button" (click)="saveProduct(product)">Save</button>
+    </div>
+    <div
+      class="message"
+      [style.color]="message === 'Product successfully added!' ? 'green' : 'red'"
+      style="text-align: center; margin-top: 8px;"
+    >
+      {{ message }}
+    </div>
+  </div>
+</ng-container>

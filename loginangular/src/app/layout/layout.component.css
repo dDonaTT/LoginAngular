@@ -1,0 +1,34 @@
+header{
+  margin: -15px;
+}
+.navbar {
+  background-color: #716e6e;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo  img{
+  width: 75px;
+  height: 75px;
+
+}
+
+.menu-items {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item  a{
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.menu-item a.active {
+  font-weight: bold;
+}
+

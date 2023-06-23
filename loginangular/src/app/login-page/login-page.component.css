@@ -1,0 +1,73 @@
+.container-fluid {
+  height: 100vh;
+}
+
+.row {
+  height: 100%;
+}
+
+.bg-image {
+  background-image: url("../../assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 50%;
+  float: left;
+}
+.login-form {
+  max-width: 400px;
+  margin: 0;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  margin-right: 250px;
+}
+
+.form-control {
+  border-color: #ccc;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.form-control {
+  margin-top: 15px;
+  width: 115%;
+  padding-left: 15px;
+  height: 35px;
+}
+h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.btn-block {
+  margin-top: 15px;
+  width: 120%;
+  height: 35px;
+  font-size: 18px;
+}
+.forgot {
+  text-align: right;
+  color: gray;
+  margin: 12px -75px 10px 0;
+}
+
+a {
+  color: black;
+  margin-top: 25px;
+}
+
+.account {
+  text-align: center;
+  padding-top: 15px;
+}

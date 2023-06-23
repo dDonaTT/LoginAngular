@@ -1,0 +1,150 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+.productform {
+  padding-top: 30px;
+  margin-bottom: 25px;
+}
+
+.table-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.custom-table th {
+  background-color: #f1f1f1;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-left: 320px;
+  margin-bottom: 15px;
+}
+
+.add-button {
+  float: right;
+  margin-top: -45px;
+  margin-right: 330px;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  width: 15%;
+  border: none;
+  background-color: #007bff;
+}
+
+.trash-icon {
+  font-family: 'Material Icons';
+}
+
+.mat-icon {
+  margin-top: -10px;
+}
+
+.delete-button {
+  vertical-align: middle;
+  margin-top: -39px;
+  font-size: 28px;
+}
+
+.dialog-overlay {
+  display: none;
+}
+
+#dateInput::before {
+  content: 'Date*';
+  color: gray;
+  pointer-events: none;
+  position: absolute;
+  padding: 0 5px;
+  background-color: white;
+  z-index: 1;
+}
+
+select {
+  color: gray;
+}
+
+#dateInput:focus::before,
+#dateInput:not([value='']):valid::before {
+  display: none;
+}
+
+.dialog-container {
+  background-color: #fff;
+  width: 400px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.dialog-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.dialog-form input,
+.dialog-form select {
+  width: 100%;
+  padding: 5px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.dialog-form select {
+  height: 45px;
+  width: 103%;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dialog-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  width: 160px;
+}
+
+.dialog-button:hover {
+  background-color: #0056b3;
+}
+
+.hide-form {
+  display: none;
+}
