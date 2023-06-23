@@ -67,17 +67,20 @@ export class ProductsPageComponent {
   }
 
   cancelForm() {
-    if (this.selectedProduct && this.products.includes(this.selectedProduct)) {
-      const index = this.products.indexOf(this.selectedProduct);
-      if (index !== -1) {
-        this.products.splice(index, 1);
-        this.dataSource = new MatTableDataSource<Product>(this.products);
-        console.log('Product deleted:', this.selectedProduct);
-        console.log('Updated products:', this.products);
+    if (this.showAddForm && this.selectedProduct && this.products.includes(this.selectedProduct)) {
+      if (!this.selectedProduct.name && !this.selectedProduct.category && !this.selectedProduct.price && !this.selectedProduct.date) {
+        const index = this.products.indexOf(this.selectedProduct);
+        if (index !== -1) {
+          this.products.splice(index, 1);
+          this.dataSource = new MatTableDataSource<Product>(this.products);
+          console.log('Product deleted:', this.selectedProduct);
+          console.log('Updated products:', this.products);
+        }
       }
     }
     this.showAddForm = false;
     this.selectedProduct = null;
     this.message = '';
   }
+
 }
